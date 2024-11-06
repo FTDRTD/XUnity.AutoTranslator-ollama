@@ -36,10 +36,7 @@ pip install Flask gevent requests
 感谢以下开源项目和工具的支持：
 ```
 Flask
-
 Gevent
-
 Requests
-
 Ollama
 ```
