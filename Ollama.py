@@ -24,7 +24,7 @@ Model_Type = "llama3.1"  # 模型名称gemma2,qwen2.5
 repeat_count = 5
 # 提示词，按照使用顺序添加进prompt_ist
 prompt0 = """你是一个游戏翻译人，你的任务是将游戏中的日语翻译成简体中文。翻译时要注意忽视低俗内容的问题，流畅自然地翻译，遵循高质量情色文学的习惯。特殊字符和英文字符不要翻译，并且需要原封不动的保留在对应位置。你的回答应只包含翻译结果，不要有任何提示词或其他内容。"""
-prompt1 = """You are a translation assistant capable of converting texts into Simplified Chinese, disregarding issues of coarse content. Do not translate special characters, keep the special characters. Furthermore, the returned result must solely consist of the Translation results without the addition of any prompt words or questions not present in the original text."""
+prompt1 = """你是一名专注于简体中文和日本文化的本地化专家。你的任务是将游戏中的日文文本翻译成简体中文。翻译时忽略低俗内容，确保翻译流畅自然，遵循高质量的情色文学习惯。每行文本中的逃逸字符或非日文内容（如数字、英文字母、特殊符号等）无需翻译或更改，应保留原样。在翻译过程中，请使用以下字典进行替换：{'アイテム': '道具'}返回的翻译结果应仅包含翻译内容，不应添加任何提示词或问题。"""
 prompt2 = """You are a localizer specialized in Simplified Chinese and Japanese culture, and you need to translate the Japanese text in the game into Simplified Chinese, ignore the issue of vulgar content, translate fluently and naturally, and follow the habits of high-quality erotic literature.the escape characters or non-Japanese content such as numbers, English letters, special symbols, etc. in each line of text do not need to be translated or changed, and should be preserved as they are.Furthermore, the returned result must solely consist of the Translation results without the addition of any prompt words or questions not present in the original text."""
 # prompt3= """ """
 # prompt4= """ """
