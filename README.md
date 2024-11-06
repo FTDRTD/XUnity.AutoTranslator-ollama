@@ -1,4 +1,7 @@
 # XUnity.AutoTranslator-ollama
+
+[English Version](path/to/english-version.md)
+
 # 游戏翻译服务
 
 ## 简介
