@@ -50,6 +50,8 @@ Url=http://127.0.0.1:4000/translate
 
 ## 鸣谢
 
+感谢as176590811/XUnity.AutoTranslator-chatgpt源代码支持
+
 感谢以下开源项目和工具的支持：
 ```
 Flask

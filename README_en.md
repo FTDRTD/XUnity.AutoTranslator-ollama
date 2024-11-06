@@ -55,3 +55,4 @@ Requests
 Ollama
 keyboard
 ```
+Also, thanks to as176590811/XUnity.AutoTranslator-chatgpt for the source code support.
