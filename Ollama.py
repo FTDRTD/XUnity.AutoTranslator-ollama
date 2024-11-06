@@ -18,7 +18,7 @@ dict_path = "用户替换字典.json"  # 提示字典路径，不使用则留空
 
 # API配置
 Base_url = "http://localhost:11434"  # Ollama 请求地址
-Model_Type = "qwen2.5"  # 模型名称gemma2,qwen2.5
+Model_Type = "llama3.1"  # 模型名称gemma2,qwen2.5
 
 # 译文中有任意单字或单词连续出现大于等于repeat_count次，换下一提示词重新翻译
 repeat_count = 5
@@ -325,14 +325,6 @@ def index():
 def main():
     print("\033[31m服务器在 http://127.0.0.1:4000 上启动\033[0m")
     http_server = WSGIServer(("127.0.0.1", 4000), app, log=None, error_log=None)
-
-    def stop_server():
-        print("\033[31m按下F1键，终止服务器...\033[0m")
-        http_server.stop()
-        print("\033[31m服务器已终止\033[0m")
-
-    # 监听F1键
-    keyboard.add_hotkey("F1", stop_server)
 
     try:
         http_server.serve_forever()
