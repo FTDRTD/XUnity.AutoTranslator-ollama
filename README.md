@@ -1,6 +1,7 @@
 # XUnity.AutoTranslator-ollama
 # 游戏翻译服务
 
+## 简介
 这是一个基于 Flask 和 Ollama API 的游戏翻译服务，使XUnity.AutoTranslator可以调用ollama来对于游戏中的日语文本翻译成简体中文。该服务支持多种提示词和字典替换，以确保翻译结果的准确性和流畅性。
 
 ## 功能特性
@@ -30,9 +31,11 @@ pip install Flask gevent requests
 服务启动后，你可以在浏览器中访问 http://127.0.0.1:4000/ 查看欢迎页面，并通过 http://127.0.0.1:4000/translate?text=你的文本 进行翻译。
 
 ### 贡献
+
 欢迎贡献代码和提出改进建议！请通过 GitHub 提交 Issue 或 Pull Request。
 
 ### 鸣谢
+
 感谢以下开源项目和工具的支持：
 ```
 Flask
