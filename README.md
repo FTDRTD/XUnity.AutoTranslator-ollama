@@ -31,6 +31,21 @@ pip install Flask gevent requests
 
 服务启动后，你可以在浏览器中访问 http://127.0.0.1:4000/ 查看欢迎页面，并通过 http://127.0.0.1:4000/translate?text=你的文本 进行翻译。
 
+### 4. 配置 XUnity.AutoTranslator
+
+在 AutoTranslatorConfig.ini配置文件中添加以下内容：
+
+```
+[Service]
+Endpoint=CustomTranslate
+FallbackEndpoint=
+--------------
+[Custom]
+Url=http://127.0.0.1:4000/translate
+
+```
+### 5.运行游戏，测试是否正常翻译
+
 ## 贡献
 
 欢迎贡献代码和提出改进建议！请通过 GitHub 提交 Issue 或 Pull Request。
