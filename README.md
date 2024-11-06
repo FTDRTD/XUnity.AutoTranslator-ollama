@@ -30,11 +30,11 @@ pip install Flask gevent requests
 
 服务启动后，你可以在浏览器中访问 http://127.0.0.1:4000/ 查看欢迎页面，并通过 http://127.0.0.1:4000/translate?text=你的文本 进行翻译。
 
-### 贡献
+## 贡献
 
 欢迎贡献代码和提出改进建议！请通过 GitHub 提交 Issue 或 Pull Request。
 
-### 鸣谢
+## 鸣谢
 
 感谢以下开源项目和工具的支持：
 ```
