@@ -42,7 +42,6 @@ FallbackEndpoint=
 --------------
 [Custom]
 Url=http://127.0.0.1:4000/translate
-
 ```
 ### 5.运行游戏，测试是否正常翻译
 
