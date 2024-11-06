@@ -1,5 +1,4 @@
-# XUnity.AutoTranslator-ollama
-
+# XUnity.AutoTranslator-ollama基于as176590811/XUnity.AutoTranslator-chatgpt进行修改
 [English Version](README_en.md)
 
 ## 简介
@@ -20,7 +19,7 @@
 首先，确保你已经安装了 Python 3.7 或更高版本。然后，使用以下命令安装所需的依赖库：
 
 ```bash
-pip install Flask gevent requests
+pip install Flask gevent requests keyboard
 ```
 
 ### 2. 配置 API
@@ -57,4 +56,5 @@ Flask
 Gevent
 Requests
 Ollama
+keyboard
 ```
