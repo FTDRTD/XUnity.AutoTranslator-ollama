@@ -1,5 +1,4 @@
 # XUnity.AutoTranslator-ollama
-# Game Translation Service
 
 This is a game translation service based on Flask and the Ollama API, designed for XUnity.AutoTranslator to translate Japanese text in games into Simplified Chinese using Ollama. The service supports multiple prompts and dictionary replacements to ensure accurate and fluent translation results.
 

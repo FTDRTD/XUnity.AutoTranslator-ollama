@@ -2,8 +2,6 @@
 
 [English Version](README_en.md)
 
-# 游戏翻译服务
-
 ## 简介
 这是一个基于 Flask 和 Ollama API 的游戏翻译服务，使XUnity.AutoTranslator可以调用ollama来对于游戏中的日语文本翻译成简体中文。该服务支持多种提示词和字典替换，以确保翻译结果的准确性和流畅性。
 
