@@ -33,7 +33,7 @@ pip install Flask gevent requests
 
 ### 4. 配置 XUnity.AutoTranslator
 
-在 AutoTranslatorConfig.ini配置文件中添加以下内容：
+在AutoTranslatorConfig.ini配置文件中修改以下内容：
 
 ```
 [Service]
