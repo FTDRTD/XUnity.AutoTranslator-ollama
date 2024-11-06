@@ -29,10 +29,10 @@ Configure the Ollama API endpoint and model name in the code.
 
 Once the service is running, you can visit http://127.0.0.1:4000/ in your browser to view the welcome page. You can also access the translation endpoint at http://127.0.0.1:4000/translate?text=your_text to perform translations.
 
-### Contributing
-We welcome contributions! Please submit issues or pull requests via GitHub.
+## Contributing
+Welcome contributions! Please submit issues or pull requests via GitHub.
 
-### Acknowledgments
+## Acknowledgments
 Thanks to the following open-source projects and tools:
 ```
 Flask
