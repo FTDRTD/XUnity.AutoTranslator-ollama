@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template_string
 from gevent.pywsgi import WSGIServer
 from urllib.parse import unquote
-from threading import Thread
 from queue import Queue
 import concurrent.futures
 import os
@@ -9,7 +8,6 @@ import re
 import time
 import json
 import requests
-import keyboard  # 导入keyboard库
 
 # 启用虚拟终端序列，支持ANSI转义代码
 os.system("")
@@ -18,7 +16,7 @@ dict_path = "用户替换字典.json"  # 提示字典路径，不使用则留空
 
 # API配置
 Base_url = "http://localhost:11434"  # Ollama 请求地址
-Model_Type = "llama3.1"  # 模型名称gemma2,qwen2.5
+Model_Type = "gemma3:1b"  # 模型名称gemma2,qwen2.5
 
 # 译文中有任意单字或单词连续出现大于等于repeat_count次，换下一提示词重新翻译
 repeat_count = 5
@@ -30,7 +28,7 @@ prompt2 = """You are a localizer specialized in Simplified Chinese and Japanese 
 # prompt4= """ """
 
 prompt_list = [prompt0, prompt1, prompt2]
-l = len(prompt_list)
+num_prompts = len(prompt_list)
 # 提示字典的提示词,最终的提示词是prompt+dprompt+提示字典，不使用提示字典可以不管
 dprompt0 = "\n在翻译中使用以下字典,字典的格式为{'原文':'译文'}\n"
 dprompt1 = "\nDuring the translation, use a dictionary in {'Japanese text ':'translated text '} format\n"
@@ -140,6 +138,7 @@ def handle_translation(text, translation_queue):
         "presence_penalty": 0.3,  # 降低重复主题或者话题的出现概率
     }
     try:
+        retries = 0  # 初始化重试次数
         dict_inuse = get_dict(text)
         apology_phrases = [
             "我很抱歉，但我无法完成这个任务",
@@ -152,7 +151,7 @@ def handle_translation(text, translation_queue):
             "了解。请提供需要翻译的日语文本",
         ]
         # 对提示词列表遍历，有任意一次结果符合要求，break
-        for i in range(len(prompt_list)):
+        for i in range(num_prompts):
             prompt = prompt_list[i]
             dict_inuse = get_dict(text)
             if dict_inuse:
@@ -277,6 +276,8 @@ def handle_translation(text, translation_queue):
 def translate():
     # 从GET请求中获取待翻译的文本
     text = request.args.get("text")
+    if text is None:
+        return "错误：未提供文本参数", 400
     print(f"\033[36m[原文]\033[0m \033[35m{text}\033[0m")
     # 检测text中是否包含"\n",如果包含则替换成\\n
     if "\n" in text:
@@ -297,7 +298,7 @@ def translate():
             future.result(timeout=30)
         except concurrent.futures.TimeoutError:
             print("翻译请求超时，重新翻译...")
-            return "[请求超时] " + text, 500
+            return "[请求超时] " + (text if text else ""), 500
 
     translation = translation_queue.get()
 
